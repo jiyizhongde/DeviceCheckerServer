@@ -34,7 +34,7 @@ post '/redeem' do
   end
 
   response = query_two_bits(request_payload['token'])
-
+  puts response
   unless response.status == 200
     return json({ message: 'Error communicating with Apple server', redeemable: false })
   end
